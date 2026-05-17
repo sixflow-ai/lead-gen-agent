@@ -96,6 +96,10 @@ Scan `directives/` and read front matter to find the right directive. Key ones:
 - `competitor_engagers.md` — Target competitor audiences
 - `icp_onboarding.md` — Guided ICP intake (when profile is empty)
 - `icp_qualification.md` — Tighten targeting / custom scoring
+- `campaign_strategy.md` — Generate 15-25+ campaign ideas with targeting strategies
+- `campaign_copywriting.md` — Write cold email copy (direction → subject → body → variants)
+- `spintax_generation.md` — Add Smartlead spintax for deliverability
+- `personalization_subagent.md` — Scale per-lead personalization with approval loop
 - `clean_and_score_leads.md` — Cleaning + ICP scoring
 - `verify_emails.md` — Email verification
 - `export_leads.md` — Google Sheets / CSV export
@@ -110,6 +114,7 @@ Scan `directives/` and read front matter to find the right directive. Key ones:
 - `execution/clean_leads.py` — Normalize, validate, deduplicate
 - `execution/score_leads.py` — Score leads against ICP (0-100, A/B/C/D grades)
 - `execution/verify_emails.py` — MillionVerifier email validation
+- `execution/spam_word_checker.py` — Scan email copy for spam triggers and deliverability issues
 - `execution/export_to_sheets.py` — Push to Google Sheets
 
 ## Key Principles
