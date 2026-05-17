@@ -1,0 +1,94 @@
+# =============================================================================
+# Lead Gen Agent — Business Profile & ICP Configuration
+# =============================================================================
+# Fill this out once. The agent reads this before every run to understand
+# who you are, who you're targeting, and what tools you have available.
+
+# --- Your Business ---
+business:
+  name: ""                    # e.g. "SixFlow AI"
+  website: ""                 # e.g. "https://sixflow.ai"
+  industry: ""                # e.g. "AI automation consulting"
+  description: ""             # 1-2 sentence elevator pitch
+  value_proposition: ""       # What problem do you solve? For whom?
+  case_studies: []            # URLs or short descriptions of past wins
+
+# --- Your Ideal Customer Profile ---
+icp:
+  # Primary targeting criteria
+  job_titles:                 # Decision makers you want to reach
+    - ""                      # e.g. "VP of Marketing"
+    - ""                      # e.g. "Head of Growth"
+  seniority_levels:           # e.g. ["Director", "VP", "C-Suite"]
+    - ""
+  departments:                # e.g. ["Marketing", "Sales", "Operations"]
+    - ""
+
+  # Company-level filters
+  company_size:
+    min_employees: 10
+    max_employees: 500
+  revenue:
+    min: ""                   # e.g. "$1M"
+    max: ""                   # e.g. "$50M"
+  industries:                 # Target industries
+    - ""                      # e.g. "SaaS"
+    - ""                      # e.g. "E-commerce"
+  geographies:                # Target locations
+    - ""                      # e.g. "United States"
+    - ""                      # e.g. "Canada"
+
+  # Qualification signals (what makes a lead HOT)
+  positive_signals:
+    - ""                      # e.g. "Recently raised funding"
+    - ""                      # e.g. "Hiring for marketing roles"
+    - ""                      # e.g. "Using competitor tools"
+  negative_signals:           # Disqualifiers
+    - ""                      # e.g. "Already has in-house AI team"
+    - ""                      # e.g. "Government / non-profit"
+
+  # Keywords for search platforms
+  search_keywords:
+    - ""                      # e.g. "marketing automation"
+    - ""                      # e.g. "lead generation"
+
+# --- Platforms & Tools Available ---
+# Set enabled: true for platforms you have API keys for
+platforms:
+  prospeo:
+    enabled: false
+    description: "Email finder + B2B lead search. Best for title-based prospecting."
+    use_when: "You need leads by job title + company filters at scale (up to 25K+)"
+  apollo:
+    enabled: false
+    description: "B2B database with contact + company data."
+    use_when: "You need enriched company/contact data with technographics"
+  google_maps:
+    enabled: false
+    description: "Local business scraping via RapidAPI."
+    use_when: "Targeting local/SMB businesses (restaurants, agencies, clinics, etc.)"
+  blitz:
+    enabled: false
+    description: "Domain-to-contacts discovery."
+    use_when: "You have a list of company domains and need to find contacts"
+  apify:
+    enabled: false
+    description: "Web scraping platform. LinkedIn, Google Maps, any website."
+    use_when: "You need custom scraping beyond what other platforms offer"
+  millionverifier:
+    enabled: false
+    description: "Email verification service."
+    use_when: "Always — verify emails before sending to protect deliverability"
+
+# --- Output Preferences ---
+output:
+  format: "google_sheets"     # "google_sheets" | "csv" | "both"
+  google_sheet_id: ""         # If using Google Sheets, paste the sheet ID here
+  dedupe_by: "email"          # Field to deduplicate on: "email" | "domain" | "both"
+  max_leads_per_run: 1000     # Safety cap per run
+  required_fields:            # Leads missing these fields get flagged
+    - "first_name"
+    - "last_name"
+    - "email"
+    - "company"
+    - "job_title"
